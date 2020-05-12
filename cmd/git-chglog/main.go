@@ -129,6 +129,12 @@ func CreateApp(actionFunc cli.ActionFunc) *cli.App {
 		// help & version
 		cli.HelpFlag,
 		cli.VersionFlag,
+
+		// paths filter
+		cli.StringFlag{
+			Name:  "path",
+			Usage: "Path to limit the changelog to. If specified, only matched path will be picked",
+		},
 	}
 
 	app.Action = actionFunc
@@ -180,6 +186,7 @@ func AppAction(c *cli.Context) error {
 			Query:            c.Args().First(),
 			NextTag:          c.String("next-tag"),
 			TagFilterPattern: c.String("tag-filter-pattern"),
+			Path:             c.String("path"),
 		},
 		fs,
 		NewConfigLoader(),

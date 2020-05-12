@@ -79,12 +79,16 @@ func newCommitParser(client gitcmd.Client, config *Config) *commitParser {
 }
 
 func (p *commitParser) Parse(rev string) ([]*Commit, error) {
-	out, err := p.client.Exec(
-		"log",
+	args := []string{
 		rev,
 		"--no-decorate",
-		"--pretty="+logFormat,
-	)
+		"--pretty=" + logFormat,
+	}
+	path := p.config.Options.Path
+	if path != "" {
+		args = append(args, "--", path)
+	}
+	out, err := p.client.Exec("log", args...)
 
 	if err != nil {
 		return nil, err
