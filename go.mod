@@ -1,11 +1,10 @@
-module github.com/Ya3Sh/git-chglog
+module github.com/git-chglog/git-chglog
 
 go 1.14
 
 require (
 	github.com/davecgh/go-spew v1.1.0 // indirect
 	github.com/fatih/color v1.6.0
-	github.com/git-chglog/git-chglog v0.0.0-20200414013904-db796966b373
 	github.com/imdario/mergo v0.0.0-20180119215619-163f41321a19
 	github.com/mattn/go-colorable v0.0.9
 	github.com/mattn/go-isatty v0.0.3 // indirect
