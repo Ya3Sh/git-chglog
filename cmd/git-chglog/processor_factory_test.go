@@ -3,7 +3,7 @@ package main
 import (
 	"testing"
 
-	chglog "github.com/git-chglog/git-chglog"
+	chglog "github.com/Ya3Sh/git-chglog"
 	"github.com/stretchr/testify/assert"
 )
 
