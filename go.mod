@@ -2,6 +2,8 @@ module github.com/git-chglog/git-chglog
 
 go 1.14
 
+replace github.com/git-chglog/git-chglog => github.com/Ya3Sh/git-chglog v0.0.0-20200512191120-4fb1dd5f7215
+
 require (
 	github.com/davecgh/go-spew v1.1.0 // indirect
 	github.com/fatih/color v1.6.0
